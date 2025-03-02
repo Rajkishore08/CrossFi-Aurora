@@ -1,56 +1,41 @@
-export type User = {
+export interface TokenData {
+  symbol: string;
+  name: string;
+  balance: string;
+  price: number;
+  change24h: number;
+}
+
+export interface StrategyData {
   id: string;
-  email: string;
-  created_at: string;
-};
+  name: string;
+  description: string;
+  apy: number;
+  risk: 'Low' | 'Medium' | 'High';
+  protocol: string;
+  invested: number;
+  tokens: string[];
+}
 
-export type Cryptocurrency = 'BTC' | 'ETH' | 'SOL' | 'XRP' | 'DOGE' | 'TRUMP';
-export type Chain = 'Bitcoin' | 'Ethereum' | 'Solana' | 'Ripple' | 'Dogecoin' | 'Trump';
+export interface WalletState {
+  connected: boolean;
+  address: string | null;
+  balance: number;
+  network: string | null;
+  connect: () => void;
+  disconnect: () => void;
+}
 
-export type PriceData = {
-  [key in Cryptocurrency]: {
-    [chain in Chain]?: number;
+export interface AIAgentState {
+  isActive: boolean;
+  strategy: string;
+  lastAction: string | null;
+  performance: {
+    daily: number;
+    weekly: number;
+    monthly: number;
+    allTime: number;
   };
-};
-
-export type ArbitrageOpportunity = {
-  id: string;
-  fromChain: Chain;
-  toChain: Chain;
-  cryptocurrency: Cryptocurrency;
-  priceDifference: number;
-  percentageDifference: number;
-  estimatedProfit: number;
-  timestamp: string;
-};
-
-export type Transaction = {
-  id: string;
-  userId: string;
-  fromChain: Chain;
-  toChain: Chain;
-  cryptocurrency: Cryptocurrency;
-  amount: number;
-  executionPrice: number;
-  status: 'pending' | 'completed' | 'failed';
-  timestamp: string;
-  profit?: number;
-};
-
-export type RiskPreference = 'conservative' | 'moderate' | 'aggressive';
-
-export type UserSettings = {
-  riskPreference: RiskPreference;
-  maxTransactionAmount: number;
-  enableAutomatedTrading: boolean;
-  minProfitThreshold: number;
-  preferredCryptocurrencies: Cryptocurrency[];
-  preferredChains: Chain[];
-  notificationsEnabled: boolean;
-};
-
-export type Portfolio = {
-  [key in Cryptocurrency]?: {
-    [chain in Chain]?: number;
-  };
-};
+  toggleActive: () => void;
+  setStrategy: (strategy: string) => void;
+}
