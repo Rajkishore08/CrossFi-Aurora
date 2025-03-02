@@ -23,21 +23,12 @@ CrossFi-Aurora is a cutting-edge decentralized finance (DeFi) platform integrati
 
 ---
 
-## 📂 Project Structure  
-```
-CrossFi-Aurora/
-│── contracts/
-│   ├── FraxIntegration.sol   # Smart contract for Frax deposits & withdrawals  
-│   ├── AITradingAgent.sol    # AI-powered DeFi trading bot  
-│   ├── SocialMediaAgent.sol  # AI-based memecoin trend tracker  
-│── scripts/
-│   ├── deployContracts.js    # Deployment script for all contracts  
-│── test/
-│   ├── FraxIntegration.test.js  # Unit tests for smart contract  
-│── README.md                 # Documentation  
-│── hardhat.config.js         # Hardhat configuration  
-│── package.json              # Dependencies and scripts  
-```
+![image](https://github.com/user-attachments/assets/c70e1265-01f3-400a-bb65-db0f19c6729e)
+![image](https://github.com/user-attachments/assets/5955955b-5f3e-4148-9a66-ebd38da28c85)
+![image](https://github.com/user-attachments/assets/2deb927f-086a-40e6-86ef-18d9b44c37f2)
+![image](https://github.com/user-attachments/assets/a6ffe91e-44ad-42ae-acc9-6e0e0b563f02)
+![image](https://github.com/user-attachments/assets/e73ace6a-8ae5-45fe-9fc5-9da46034bded)
+
 
 ---
 
